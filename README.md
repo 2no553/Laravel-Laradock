@@ -8,7 +8,7 @@
 - Laradock
   - php-fpm 7.2.4
   - nginx version: nginx/1.15.0
-  - mysql  Ver 8.0.3-rc for Linux on x86_64 (MySQL Community Server (GPL))
+  - mysql  Ver 8.0.11 for Linux on x86_64 (MySQL Community Server - GPL)
 - [Laravel 5.6.26](https://laravel.com/)
 
 #### other info
@@ -17,17 +17,16 @@
 
 ### setting laradock
 ```
+$ git clone https://github.com/2no553/laravel-laradock.git
+$ cd laravel-laradock
+
 $ git clone https://github.com/Laradock/laradock.git
 $ cd laradock
 $ cp env-example .env
 ```
 
-#### change mysql latest to 8.0.3
+#### setting mysql latest
 ```
-$ vi .env
-- MYSQL_VERSION=latest
-+ MYSQL_VERSION=8.0.3
-
 $ vi docker-compose.yml
   ports:
     - "${MYSQL_PORT}:3306"
@@ -36,7 +35,8 @@ $ vi docker-compose.yml
 + user: "1000:50"
 
 $ vi mysql/my.cnf
-+ innodb_use_native_aio = 0
++ innodb_use_native_aio=0
++ default_authentication_plugin=mysql_native_password
 ```
 
 ### start container
