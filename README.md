@@ -17,8 +17,8 @@
 
 ### setting laradock
 ```
-$ git clone https://github.com/2no553/laravel-laradock.git
-$ cd laravel-laradock
+$ git clone https://github.com/2no553/laravel_laradock.git
+$ cd laravel_laradock
 
 $ git clone https://github.com/Laradock/laradock.git
 $ cd laradock
